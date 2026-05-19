@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulir Aplikasi Pembukaan Rekening Investor - BNI Securities</title>
+<style>
+  * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .page {
+            width: 210mm; 
+            background-color: #fff;
+            padding: 10mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            color: #000;
+            line-height: 1.2;
+        }
+
+        
+        .text-orange { color: #f26522; }
+        .text-teal { color: #006660; }
+        .bg-orange { background-color: #f26522; color: #fff; }
+        .bg-teal { background-color: #006660; color: #fff; }
+
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-weight: bold;
+            font-family: 'Arial Black', Impact, sans-serif;
+            letter-spacing: -1px;
+        }
+        .logo-icon {
+            color: #f26522;
+            margin-right: 4px;
+        }
+        .logo-text { color: #006660; }
+        .logo-sec { 
+          font-size: 5px; 
+          font-weight: normal; 
+          color: #f26522; 
+          margin-left: 5px; 
+          font-family: Arial, sans-serif; 
+          letter-spacing: normal;}
+        
+        .main-title {
+            flex-grow: 1;
+            text-align: center;
+            padding: 6px 10px;
+            margin: 0 15px;
+            font-size: 11px;
+        }
+        .main-title strong { display: block; font-size: 12px; }
+
+        
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .client-code-box {
+            border: 2px solid #f26522;
+            width: 140px;
+            height: 30px;
+        }
+
+       
+        .cb {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+        .cb-label {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .box-grid {
+            display: inline-flex;
+            border: 1px solid #000;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .box-cell {
+            width: 12px;
+            border-right: 1px solid #000;
+        }
+        .box-cell:last-child { border-right: none; }
+        
+        .dotted-line {
+            flex-grow: 1;
+            border-bottom: 1px dotted #000;
+            min-width: 50px;
+            margin: 0 5px;
+            position: relative;
+            top: -3px;
+        }
+
+        
+        .text-orange { color: #f26522; }
+        .text-teal { color: #006660; }
+        .bg-orange { background-color: #f26522; color: #fff; }
+        .bg-teal { background-color: #006660; color: #fff; }
+
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-weight: bold;
+            font-family: 'Arial Black', Impact, sans-serif;
+            letter-spacing: -1px;
+        }
+        .logo-icon {
+            color: #f26522;
+            margin-right: 4px;
+        }
+        .logo-text { color: #006660; }
+        .logo-sec { font-size: 14px; font-weight: normal; color: #f26522; margin-left: 5px; font-family: Arial, sans-serif; letter-spacing: normal;}
+        
+        .main-title {
+            flex-grow: 1;
+            text-align: center;
+            padding: 6px 10px;
+            margin: 0 15px;
+            font-size: 11px;
+        }
+        .main-title strong { display: block; font-size: 12px; }
+
+        
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .client-code-box {
+            border: 2px solid #f26522;
+            width: 140px;
+            height: 30px;
+        }
+
+       
+        .cb {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+        .cb-label {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .box-grid {
+            display: inline-flex;
+            border: 1px solid #000;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .box-cell {
+            width: 12px;
+            border-right: 1px solid #000;
+        }
+        .box-cell:last-child { border-right: none; }
+        
+        .dotted-line {
+            flex-grow: 1;
+            border-bottom: 1px dotted #000;
+            min-width: 50px;
+            margin: 0 5px;
+            position: relative;
+            top: -3px;
+        }
+
+        .left-col, .right-col {}
+        
+  /* TOP INFO ROW */
+  .top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    gap: 6px;
+  }
+  .top-info-left {
+    font-size: 8px;
+  }
+  .top-info-left p { margin-bottom: 1px; }
+  .top-info-left .italic { font-style: italic; }
+
+  /* Kode Nasabah box */
+  .kode-nasabah {
+    border: 2px solid #e87722;
+    padding: 4px 10px;
+    text-align: center;
+    min-width: 130px;
+  }
+  .kode-nasabah .kn-label { font-size: 8px; font-weight: bold; }
+  .kode-nasabah .kn-sublabel { font-style: italic; font-size: 8px; color: #333; }
+  .kode-nasabah .kn-box {
+    border: 1px solid #999;
+    height: 18px;
+    margin-top: 3px;
+    width: 100%;
+  }
+
+  /* CIF ROW */
+  .cif-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 3px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .cif-box {
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    font-size: 7.5px;
+  }
+  .checkbox-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .cb-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 8px;
+  }
+  .cb-item input[type=checkbox] {
+    width: 10px; height: 10px;
+    margin: 0;
+  }
+  .inline-input {
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 8px;
+    background: transparent;
+    min-width: 40px;
+  }
+  .box-input {
+    display: inline-flex;
+    gap: 1px;
+    margin-left: 3px;
+  }
+  .box-input span {
+    display: inline-block;
+    width: 13px; height: 13px;
+    border: 1px solid #555;
+    font-size: 7px;
+    text-align: center;
+    line-height: 13px;
+  }
+  .field-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 7.5px;
+    margin-bottom: 2px;
+  }
+  .field-group label { white-space: nowrap; }
+
+  /* Numbers row (No CIF, No SID, No Sub Rekening) */
+  .numbers-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-bottom: 3px;
+  }
+  .num-field {
+    font-size: 7.5px;
+  }
+  .num-field .label { font-weight: bold; }
+  .num-field .sublabel { font-style: italic; color: #555; }
+  .num-boxes {
+    display: flex;
+    gap: 1px;
+    margin-top: 2px;
+  }
+  .num-boxes span {
+    display: inline-block;
+    width: 11px; height: 11px;
+    border: 1px solid #555;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    background: #006660;
+    color: #fff;
+    font-weight: bold;
+    font-size: 9px;
+    padding: 3px 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .section-letter {
+    border: 1px solid #f26522;
+    color: #006660;
+    font-weight: bold;
+    padding: 2px 8px;
+    background: #fff;
+    margin: 2px 5px 2px 2px;
+  }
+
+  /* TWO COLUMN LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .left-col, .right-col {}
+
+  /* FORM FIELDS */
+  .form-field {
+    margin-bottom: 5px;
+  }
+  .form-field .f-label {
+    font-weight: bold;
+    font-size: 8px;
+    display: block;
+  }
+  .form-field .f-sublabel {
+    font-style: italic;
+    font-size: 7.5px;
+    color: #555;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .form-field .f-input-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .form-field .colon { font-weight: bold; }
+  .form-field input[type=text], .form-field input[type=email], .form-field input[type=tel] {
+    border: none;
+    border-bottom: 1px solid #555;
+    outline: none;
+    font-size: 8px;
+    background: transparent;
+    width: 100%;
+    padding: 1px 0;
+  }
+  .dot-line {
+    border-bottom: 1px dotted #555;
+    flex: 1;
+    height: 12px;
+  }
+
+  /* RADIO / CHECKBOX GROUPS */
+  .radio-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+    align-items: center;
+  }
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 8px;
+  }
+  .radio-item input[type=radio] { width: 10px; height: 10px; margin: 0; }
+  .radio-item .sub { font-style: italic; font-size: 7px; color: #555; display: block; }
+
+  /* DATE FIELDS */
+  .date-row {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 7.5px;
+    margin-top: 2px;
+  }
+  .date-row .date-box {
+    display: inline-flex;
+    gap: 1px;
+  }
+  .date-row .date-box span {
+    display: inline-block;
+    width: 11px; height: 11px;
+    border: 1px solid #555;
+  }
+  .date-row .date-label { color: #555; font-style: italic; font-size: 7px; }
+
+  /* IDENTITY CHECKBOXES */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .id-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 8px;
+  }
+  .id-item .id-sublabel { font-style: italic; font-size: 7px; color: #555; }
+
+  /* RESIDENCE CHECKBOXES */
+  .residence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .res-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 8px;
+  }
+  .res-item .sub { font-size: 7px; font-style: italic; color: #555; }
+
+  /* PHONE BOXES */
+  .phone-boxes {
+    display: flex;
+    gap: 1px;
+    margin-top: 1px;
+  }
+  .phone-boxes span {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border: 1px solid #555;
+  }
+
+  /* RT/RW */
+  .rt-rw {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 8px;
+    margin-top: 2px;
+  }
+  .rt-rw .small-boxes {
+    display: flex;
+    gap: 1px;
+  }
+  .rt-rw .small-boxes span {
+    display: inline-block;
+    width: 11px; height: 11px;
+    border: 1px solid #555;
+  }
+
+  /* INTERNET BANKING */
+  .internet-banking {
+    border: 1px solid #555;
+    padding: 4px;
+    font-size: 7.5px;
+  }
+  .ib-title { font-weight: bold; font-size: 7.5px; }
+  .ib-sub { font-style: italic; font-size: 7px; }
+
+  /* EDUCATION / OCCUPATION SECTION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin-top: 3px;
+  }
+  .edu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 8px;
+  }
+  .edu-item .sub { font-size: 7px; font-style: italic; color: #555; display: block; }
+
+  .occ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin-top: 3px;
+  }
+  .occ-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 8px;
+  }
+  .occ-item .sub { font-size: 7px; font-style: italic; color: #555; display: block; }
+
+  /* SIGNATURE BOX */
+  .signature-box {
+    border: 2px solid #e87722;
+    padding: 8px;
+    text-align: center;
+    font-size: 8px;
+    font-style: italic;
+    min-height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 8px;
+    color: #555;
+  }
+
+  /* Top row layout */
+  .top-section {
+    display: grid;
+    grid-template-columns: auto auto auto auto 1fr;
+    gap: 6px;
+    margin-bottom: 4px;
+    align-items: start;
+  }
+
+  .rek-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-size: 7.5px;
+  }
+  .rek-box {
+    border: 1px solid #444;
+    padding: 3px 5px;
+  }
+  .rek-box .rl { font-weight: bold; font-size: 8px; }
+  .rek-box .rs { font-style: italic; color: #555; font-size: 7px; }
+  .inner-boxes {
+    display: flex;
+    gap: 1px;
+    margin-top: 2px;
+  }
+  .inner-boxes span {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #555;
+  }
+
+  .cif-section {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    padding: 3px;
+    border: 1px solid #ddd;
+  }
+
+  .ib-box {
+    border: 1px solid #555;
+    padding: 3px 5px;
+    font-size: 7.5px;
+    min-width: 90px;
+  }
+  .ib-box .ib-t { font-weight: bold; font-size: 7.5px; line-height: 1.3; }
+  .ib-box .ib-s { font-style: italic; color: #555; font-size: 7px; }
+
+  .filled-by { font-size: 7px; color: #555; font-style: italic; }
+
+  .zip-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .zip-boxes span {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border: 1px solid #555;
+  }
+  .zip-boxes { display: flex; gap: 1px; }
+
+  .note-italic {
+    font-style: italic;
+    font-size: 7.5px;
+    color: #555;
+  }
+
+  /* Agama grid */
+  .agama-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .npwp-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 2px;
+    font-size: 8px;
+  }
+
+  hr.thin { border: none; border-top: 1px solid #ddd; margin: 3px 0; }
+
+  @media print {
+    body { margin: 0; }
+    .page { margin: 0; padding: 8mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+    
+    <div class="header-container">
+        <div class="logo-box">
+            <h1><img src="Bank_Negara_Indonesia_logo_(2004).svg.png" width="80px"></h1>
+        </div>
+        <div class="main-title bg-orange">
+            <strong>FORMULIR APLIKASI PEMBUKAAN REKENING INVESTOR (PERORANGAN)</strong>
+            <strong><i>INDIVIDUAL INVESTOR ACCOUNT OPENING APPLICATION FORM</i></strong>
+        </div>
+        <div class="logo-box">
+            <h1><img src="Bank_Negara_Indonesia_logo_(2004).svg.png" width="80px"></h1>
+            <span class="logo-sec"><small>Securities</small></span>
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <div>
+            <strong>Mohon diisi dengan huruf cetak dan beri tanda &radic; pada kotak pilihan</strong><br>
+            <i>Please fill in with block letters and mark &radic; in the box</i>
+        </div>
+        <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="text-align: right;">
+                    <strong style="font-size: 14px;">Kode Nasabah</strong><br>
+                    <i>Client Code</i>
+                </div>
+                <div class="client-code-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0; margin-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 25%;">
+                    <div class="cb-label"><div class="cb"></div> CIF Baru / <i>New CIF</i></div>
+                </td>
+                <td style="width: 25%;">
+                    <div class="cb-label"><div class="cb"></div> CIF Lama / <i>Existing CIF</i></div>
+                </td>
+                <td colspan="2" style="font-size: 9px;"><u>No Rekening di BNI / <i>BNI Account Number</i> *)</u></td>
+                <td rowspan="4" style="width: 20%; vertical-align: top; text-align: right;">
+                    Daftar Internet Banking?<br><i>Sign Up for Internet Banking?</i><br>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 4px;">
+                        <div class="cb-label"><div class="cb"></div> Ya/<i>Yes</i></div>
+                        <div class="cb-label" style="margin-right:0;"><div class="cb"></div> Tidak/<i>No</i></div>
+                    </div>
+                    <div class="small-txt" style="margin-top:15px;">*) diisi oleh petugas<br>Filled by the officer</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top: 5px;">
+                    <div style="display:inline-block; width: 60px;">No CIF *)<br><i>CIF Number</i></div>
+                    <div class="box-grid">
+                        <div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div>
+                    </div>
+                </td>
+                <td colspan="2" style="padding-top: 5px;">
+                    <div style="display:inline-block; width: 60px;">Baru /<br><i>New</i></div>
+                    <div class="box-grid">
+                        <div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top: 5px;">
+                    <div style="display:inline-block; width: 60px;">No SID *)<br><i>SID Number</i></div>
+                    <div class="box-grid">
+                        <div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div>
+                    </div>
+                </td>
+                <td colspan="2" style="padding-top: 5px;">
+                    <div style="display:inline-block; width: 60px;">Rek. Yang ada<br><i>Existing Acct</i></div>
+                    <div class="box-grid">
+                        <div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="padding-top: 5px;">
+                    <div style="display:inline-block; width: 120px;">No Sub Rekening Efek *)<br><i>Securities Account Number</i></div>
+                    <div class="box-grid">
+                        <div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div><div class="box-cell"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+  <!-- SECTION A -->
+  <div class="section-header">
+    <span class="section-letter">A</span>
+    <span>DATA PEMOHON / <em style="font-weight:normal;">APPLICANT DATA</em></span>
+  </div>
+
+  <div class="two-col">
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <div class="form-field">
+        <span class="f-label">Nama Depan</span>
+        <span class="f-sublabel">First Name</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+      <div class="form-field">
+        <span class="f-label">Nama Belakang</span>
+        <span class="f-sublabel">Last Name</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+      <div style="font-size:8px;font-style:italic;margin-bottom:3px;">(Isi Nama sesuai Kartu Identitas / <strong>Fill Name as stated in the ID</strong>)</div>
+
+      <div class="form-field">
+        <span class="f-label">Nama Alias (jika ada)</span>
+        <span class="f-sublabel">Alias Name (if any)</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Jenis Kelamin</span>
+        <span class="f-sublabel">Sex</span>
+        <div class="f-input-row" style="gap:8px;">
+          <span class="colon">:</span>
+          <label class="radio-item"><input type="radio" name="sex"> Laki-Laki <span class="sub">Male</span></label>
+          <label class="radio-item"><input type="radio" name="sex"> Perempuan <span class="sub">Female</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Status Pernikahan</span>
+        <span class="f-sublabel">Marital Status</span>
+        <div class="f-input-row" style="gap:5px;flex-wrap:wrap;">
+          <span class="colon">:</span>
+          <label class="radio-item"><input type="radio" name="marital"> Menikah <span class="sub">Married</span></label>
+          <label class="radio-item"><input type="radio" name="marital"> Lajang <span class="sub">Single</span></label>
+          <label class="radio-item"><input type="radio" name="marital"> Janda/Duda <span class="sub">Widow/Widower</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tempat/Tanggal Lahir</span>
+        <span class="f-sublabel">Place/Date of Birth</span>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:2px;font-size:7.5px;">
+          <span>:</span>
+          <input type="text" style="width:70px;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;" placeholder="Tempat">
+          <span style="font-style:italic;color:#555;">tgl</span>
+          <div class="date-row">
+            <div class="date-box"><span></span><span></span></div>
+          </div>
+          <span style="font-style:italic;color:#555;">bln</span>
+          <div class="date-row">
+            <div class="date-box"><span></span><span></span></div>
+          </div>
+          <span style="font-style:italic;color:#555;">thn</span>
+          <div class="date-row">
+            <div class="date-box"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Nama Gadis Ibu Kandung</span>
+        <span class="f-sublabel">Mother's Maiden Name</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tanda pengenal</span>
+        <span class="f-sublabel">Identity</span>
+        <div style="display:flex;align-items:flex-start;gap:4px;margin-top:2px;">
+          <span style="font-weight:bold;">:</span>
+          <div class="identity-grid">
+            <label class="id-item"><input type="checkbox"> KTP<br><span class="id-sublabel">ID Card</span></label>
+            <label class="id-item"><input type="checkbox"> Paspor<br><span class="id-sublabel">Passport</span></label>
+            <label class="id-item" style="grid-column:1/-1;"><input type="checkbox"> KITAS/KITAP<br><span class="id-sublabel">Temporary Residence Visa</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+          <span style="font-weight:bold;font-size:8px;">No:</span>
+          <div class="inner-boxes">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <span style="font-style:italic;font-size:7.5px;color:#555;">ID Number</span>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Berlaku s/d</span>
+        <span class="f-sublabel">Expiry Date</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;font-size:7.5px;">
+          <span>:</span>
+          <span style="font-style:italic;color:#555;">tgl</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">bln</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">thn</span>
+          <div class="date-box"><span></span><span></span><span></span><span></span></div>
+          <label style="display:flex;align-items:center;gap:2px;"><input type="checkbox"> Seumur Hidup / <em>Valid for life</em></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tempat Diterbitkan</span>
+        <span class="f-sublabel">Place of Issuance</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tanggal Diterbitkan</span>
+        <span class="f-sublabel">Date of Issuance</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;font-size:7.5px;">
+          <span>:</span>
+          <span style="font-style:italic;color:#555;">tgl</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">bln</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">thn</span>
+          <div class="date-box"><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Kewarganegaraan</span>
+        <span class="f-sublabel">Nationality</span>
+        <div style="display:flex;align-items:flex-start;gap:4px;margin-top:2px;">
+          <span>:</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+              <label class="radio-item"><input type="radio" name="nationality"> WNI</label>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;">
+              <label class="radio-item"><input type="radio" name="nationality"> WNA *),</label>
+              <span style="font-size:7.5px;">Negara Asal: <input type="text" style="width:80px;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;"></span>
+            </div>
+            <div style="font-size:7px;font-style:italic;color:#555;">Native Country</div>
+            <div style="font-size:7px;font-style:italic;color:#555;">*) dilampirkan Paspor &amp; KITAS / Passport &amp; KITAS attached</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Agama</span>
+        <span class="f-sublabel">Religion</span>
+        <div style="display:flex;align-items:flex-start;gap:4px;margin-top:2px;">
+          <span>:</span>
+          <div class="agama-grid" style="font-size:8px;gap:3px;flex:1;">
+            <label class="radio-item"><input type="radio" name="agama"> Islam<br><span class="sub">Moslem</span></label>
+            <label class="radio-item"><input type="radio" name="agama"> Kristen<br><span class="sub">Christian</span></label>
+            <label class="radio-item"><input type="radio" name="agama"> Katolik<br><span class="sub">Catholic</span></label>
+            <label class="radio-item"><input type="radio" name="agama"> Buddha<br><span class="sub">Buddhist</span></label>
+            <label class="radio-item"><input type="radio" name="agama"> Hindu<br><span class="sub">Hindu</span></label>
+            <label class="radio-item"><input type="radio" name="agama"> Kong Hu Cu<br><span class="sub">Kong Hu Cu</span></label>
+            <label class="radio-item" style="grid-column:1/-1;"><input type="radio" name="agama"> Lainnya / <em>Others</em>: <input type="text" style="width:80px;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">NPWP</span>
+        <span class="f-sublabel">Tax ID Number</span>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:2px;">
+          <span>:</span>
+          <label class="radio-item"><input type="radio" name="npwp"> Ada / <em>Possess</em></label>
+          <label class="radio-item"><input type="radio" name="npwp"> Tidak Ada / <em>Not Possess</em></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:1px;">
+          <span style="font-weight:bold;font-size:8px;">No:</span>
+          <div class="inner-boxes">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tempat Diterbitkan</span>
+        <span class="f-sublabel">Place of Issuance</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Tanggal Diterbitkan</span>
+        <span class="f-sublabel">Date of Issuance</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;font-size:7.5px;">
+          <span>:</span>
+          <span style="font-style:italic;color:#555;">tgl</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">bln</span>
+          <div class="date-box"><span></span><span></span></div>
+          <span style="font-style:italic;color:#555;">thn</span>
+          <div class="date-box"><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <div class="form-field">
+        <span class="f-label">Alamat (sesuai tanda pengenal)</span>
+        <span class="f-sublabel">Address as stated in ID Card</span>
+        <div style="font-size:7.5px;font-style:italic;color:#555;">: (fotokopi terlampir / <em>copy attached</em>)</div>
+        <input type="text" style="width:100%;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;margin-top:2px;">
+        <input type="text" style="width:100%;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;margin-top:4px;">
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Alamat Tempat Tinggal Terkini</span>
+        <span class="f-sublabel">Present Residence Address</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+        <input type="text" style="width:100%;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;margin-top:4px;">
+        <div class="rt-rw" style="margin-top:4px;">
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+          <span>RT / RW</span>
+          <div class="small-boxes"><span></span><span></span><span></span></div>
+          <span>/</span>
+          <div class="small-boxes"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Desa / Kelurahan</span>
+        <span class="f-sublabel">Village</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Kecamatan</span>
+        <span class="f-sublabel">Sub-District</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div style="display:flex;gap:6px;align-items:flex-start;">
+          <div style="flex:1;">
+            <span class="f-label">Kota</span>
+            <span class="f-sublabel">City</span>
+            <div class="f-input-row">
+              <span class="colon">:</span>
+              <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+            </div>
+          </div>
+          <div>
+            <span class="f-label">Kode Pos</span>
+            <span class="f-sublabel">Zip Code</span>
+            <div class="zip-boxes">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div style="display:flex;gap:6px;align-items:flex-start;">
+          <div style="flex:1;">
+            <span class="f-label">Propinsi</span>
+            <span class="f-sublabel">Province</span>
+            <div class="f-input-row">
+              <span class="colon">:</span>
+              <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+            </div>
+          </div>
+          <div style="flex:1;">
+            <span class="f-label">Negara</span>
+            <span class="f-sublabel">Country</span>
+            <div class="f-input-row">
+              <span class="colon">:</span>
+              <input type="text" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Status Tempat Tinggal / <em style="font-weight:normal;">Ownership of Residence</em></span>
+        <div class="residence-grid" style="margin-top:3px;">
+          <label class="res-item"><input type="checkbox"> Milik Sendiri<br><span class="sub">Own House</span></label>
+          <label class="res-item"><input type="checkbox"> Milik Sendiri Dijaminkan<br><span class="sub">Own House Used as Collateral</span></label>
+          <label class="res-item"><input type="checkbox"> Milik Keluarga<br><span class="sub">Family Owned House</span></label>
+          <label class="res-item"><input type="checkbox"> Sewa / Kontrak<br><span class="sub">Rented House</span></label>
+          <label class="res-item"><input type="checkbox"> Rumah Dinas<br><span class="sub">Official Residence</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">No. Telpon</span>
+        <span class="f-sublabel">Phone Number</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;">
+          <span>:</span>
+          <div class="phone-boxes">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">No. Fax</span>
+        <span class="f-sublabel">Fax Number</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;">
+          <span>:</span>
+          <div class="phone-boxes">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">No. HP</span>
+        <span class="f-sublabel">Cell Phone</span>
+        <div style="display:flex;align-items:center;gap:3px;margin-top:2px;">
+          <span>:</span>
+          <div class="phone-boxes">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="f-label">Email</span>
+        <div class="f-input-row">
+          <span class="colon">:</span>
+          <input type="email" style="flex:1;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </div>
+      </div>
+
+      <!-- SECTION B -->
+      <div class="section-header" style="margin-top:6px;">
+        <span class="section-letter">B.</span>
+        <span>LATAR BELAKANG PENDIDIKAN / <em style="font-weight:normal;">EDUCATIONAL BACKGROUND</em></span>
+      </div>
+      <div class="edu-grid">
+        <label class="edu-item"><input type="checkbox"> SD<br><span class="sub">Elementary</span></label>
+        <label class="edu-item"><input type="checkbox"> SMP<br><span class="sub">Junior High</span></label>
+        <label class="edu-item"><input type="checkbox"> SMA / Sederajat<br><span class="sub">Senior High School</span></label>
+        <label class="edu-item"><input type="checkbox"> D1-D2<br><span class="sub">Diploma</span></label>
+        <label class="edu-item"><input type="checkbox"> D3<br><span class="sub">Academy</span></label>
+        <label class="edu-item"><input type="checkbox"> S1<br><span class="sub">Degree</span></label>
+        <label class="edu-item"><input type="checkbox"> S2<br><span class="sub">Master</span></label>
+        <label class="edu-item"><input type="checkbox"> S3<br><span class="sub">Doctoral</span></label>
+        <label class="edu-item" style="grid-column:2/-1;"><input type="checkbox"> Lain-lain, jelaskan<br><span class="sub">Others, please specify:</span>
+          <input type="text" style="width:80px;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </label>
+      </div>
+
+      <!-- SECTION C -->
+      <div class="section-header" style="margin-top:6px;">
+        <span class="section-letter">C.</span>
+        <span>LATAR BELAKANG PEKERJAAN / <em style="font-weight:normal;">OCCUPATIONAL BACKGROUND</em></span>
+      </div>
+      <div class="occ-grid">
+        <label class="occ-item"><input type="checkbox"> Pelajar/Mahasiswa<br><span class="sub">Student</span></label>
+        <label class="occ-item"><input type="checkbox"> Pegawai Swasta<br><span class="sub">Private Employee</span></label>
+        <label class="occ-item"><input type="checkbox"> Pensiunan<br><span class="sub">Retired</span></label>
+        <label class="occ-item"><input type="checkbox"> Ibu Rumah Tangga<br><span class="sub">Housewife</span></label>
+        <label class="occ-item"><input type="checkbox"> Pegawai Negeri<br><span class="sub">Civil Employee</span></label>
+        <label class="occ-item"><input type="checkbox"> Guru<br><span class="sub">Teacher</span></label>
+        <label class="occ-item"><input type="checkbox"> Wiraswasta<br><span class="sub">Self Employed</span></label>
+        <label class="occ-item"><input type="checkbox"> TNI / Polisi<br><span class="sub">Army / Police</span></label>
+        <label class="occ-item" style="grid-column:1/-1;"><input type="checkbox"> Lainnya<br><span class="sub">Others</span>
+          <input type="text" style="width:100px;border:none;border-bottom:1px dotted #555;outline:none;font-size:8px;">
+        </label>
+      </div>
+
+      <!-- SIGNATURE -->
+      <div class="signature-box" style="margin-top:6px;">
+        <span>Tandatangan / <em>Signature</em></span>
+      </div>
+
+    </div><!-- end right col -->
+  </div><!-- end two-col -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>2011</span>
+    <span>1/3</span>
+  </div>
+
+</div><!-- end page -->
+</body>
+</html>
